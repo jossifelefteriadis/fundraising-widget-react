@@ -10,7 +10,9 @@ export default class Widget extends React.Component {
     this.state = {
       fundGoal: 1000,
       percentFunded: 0,
-      amountFunded: 0
+      amountFunded: 0,
+      showInput: true,
+      inputValue: undefined
     }
   }
 
@@ -21,12 +23,44 @@ export default class Widget extends React.Component {
     }))
   }
 
+  showInputField = () => {
+    this.setState(prevState => ({
+      showInput: !prevState.showInput
+    }))
+  }
+
+  correctInput = () => {
+    this.setState(() => ({
+      inputValue: true
+    }))
+    this.showInputField()
+  }
+
+  wrongInput = () => {
+    this.setState(() => ({
+      inputValue: false
+    }))
+  }
+
+  closeSuccessMessage = () => {
+    this.setState(() => ({
+      inputValue: undefined
+    }))
+    this.showInputField()
+  }
+
   render() {
     return (
       <div>
         <Header />
         <Tooltip state={this.state} />
-        <BoxFrame state={this.state} getAmount={this.getAmount} />
+        <BoxFrame
+          state={this.state}
+          getAmount={this.getAmount}
+          correctInput={this.correctInput}
+          wrongInput={this.wrongInput}
+          closeSuccessMessage={this.closeSuccessMessage}
+        />
       </div>
     )
   }

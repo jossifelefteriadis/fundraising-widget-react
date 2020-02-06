@@ -8,7 +8,16 @@ export default class BoxFrameContent extends React.Component {
     if (ValidateAmount(value)) {
       e.target.elements.amount.value = ''
       this.props.getAmount(value)
+      console.log('money')
+      this.props.correctInput()
+    } else {
+      console.log('wrong input')
+      this.props.wrongInput()
     }
+  }
+
+  closeSuccessMessage = () => {
+    this.props.closeSuccessMessage()
   }
 
   render() {
@@ -31,10 +40,23 @@ export default class BoxFrameContent extends React.Component {
           Pledge money by entering the sum in the field below and press pledge,
           we already know your credit card details.
         </p>
-        <form onSubmit={this.getAmount}>
-          <input type='text' name='amount' />
-          <input type='submit' value='Pledge' />
-        </form>
+        {this.props.state.showInput && (
+          <form onSubmit={this.getAmount}>
+            <input type='text' name='amount' />
+            <input type='submit' value='Pledge' />
+          </form>
+        )}
+        {this.props.state.inputValue && (
+          <section>
+            Thank you for your pledge!{' '}
+            <a href='#' onClick={this.closeSuccessMessage}>
+              Close
+            </a>
+          </section>
+        )}
+        {this.props.state.inputValue === false && (
+          <section>We only accept full numbers.</section>
+        )}
       </section>
     )
   }

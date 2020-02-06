@@ -5,7 +5,13 @@ import BoxFrameContent from './BoxFrameContent'
 const BoxFrame = props => (
   <section>
     <ProgressBar />
-    <BoxFrameContent state={props.state} getAmount={props.getAmount} />
+    <BoxFrameContent
+      state={props.state}
+      getAmount={props.getAmount}
+      correctInput={props.correctInput}
+      wrongInput={props.wrongInput}
+      closeSuccessMessage={props.closeSuccessMessage}
+    />
   </section>
 )
 
