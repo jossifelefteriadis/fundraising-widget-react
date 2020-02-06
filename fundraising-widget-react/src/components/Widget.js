@@ -36,7 +36,6 @@ export default class Widget extends React.Component {
       this.setState(() => ({
         percentFunded: percent.toFixed(0)
       }))
-      //update progressBar
     } else {
       this.setState(() => ({
         percentFunded: percent.toFixed(0)

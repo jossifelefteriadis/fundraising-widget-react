@@ -4,7 +4,14 @@ const ProgressBar = props => (
   <section className='progressBar_container'>
     <section
       className='progressBar_bar inProgress'
-      style={{ width: `${props.state.percentFunded}%` }}
+      style={
+        props.state.percentFunded < 100
+          ? { width: `${props.state.percentFunded}%` }
+          : {
+              width: `${props.state.percentFunded}%`,
+              backgroundColor: '#1CBC2C'
+            }
+      }
     ></section>
   </section>
 )
