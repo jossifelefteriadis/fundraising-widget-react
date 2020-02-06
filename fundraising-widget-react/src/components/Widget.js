@@ -18,9 +18,31 @@ export default class Widget extends React.Component {
 
   getAmount = amount => {
     const parsedAmount = parseInt(amount)
-    this.setState(prevState => ({
-      amountFunded: prevState.amountFunded + parsedAmount
-    }))
+    this.setState(
+      prevState => ({
+        amountFunded: prevState.amountFunded + parsedAmount
+      }),
+      () => {
+        this.updatePercent(this.state.amountFunded)
+      }
+    )
+  }
+
+  updatePercent = amount => {
+    const fundGoal = this.state.fundGoal
+    const percent = (amount / fundGoal) * 100
+    console.log(fundGoal)
+    if (amount < fundGoal) {
+      this.setState(() => ({
+        percentFunded: percent.toFixed(0)
+      }))
+      //update progressBar
+    } else {
+      this.setState(() => ({
+        percentFunded: percent.toFixed(0)
+      }))
+      // Make progressBar green
+    }
   }
 
   showInputField = () => {

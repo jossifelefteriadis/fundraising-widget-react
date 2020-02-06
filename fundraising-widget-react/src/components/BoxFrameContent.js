@@ -8,10 +8,8 @@ export default class BoxFrameContent extends React.Component {
     if (ValidateAmount(value)) {
       e.target.elements.amount.value = ''
       this.props.getAmount(value)
-      console.log('money')
       this.props.correctInput()
     } else {
-      console.log('wrong input')
       this.props.wrongInput()
     }
   }
