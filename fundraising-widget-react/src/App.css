@@ -1,38 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global resets */
 .App {
+  display: flex;
+  justify-content: center;
+  font-family: 'rooney-sans', Avenir-Book, Calibri, sans-serif;
+  color: #424242;
+  line-height: 1.4rem;
+  font-size: 1rem;
+}
+
+/* Fonts */
+
+.container {
+  margin-top: 1%;
+}
+
+.title {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 5%;
+  text-transform: uppercase;
+}
+
+/* COLORS: 
+  blue: #20A1D4;
+  green: #1CBC2C;
+  orange: #EF5F3C;
+  black: #424242;
+  grey: #777;
+  light grey: #eaeaea;
+*/
+
+/* Tooltip */
+
+.tooltip {
+  color: #fff;
+  background-color: #424242;
+  padding: 0.6rem 0;
+  border-radius: 4px;
+  width: 250px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Progress bar */
+
+.progressBar_container {
+  position: relative;
+  height: 12px;
+  border-bottom: 1px solid #eaeaea;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.progressBar_bar {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.inProgress {
+  background-color: #ef5f3c;
+}
+
+/* Box frame */
+
+.boxFrame {
+  width: 250px;
+  border: 1px solid #eaeaea;
+  text-align: left;
+}
+
+.boxFrame_content {
+  margin: 6%;
+}
+
+/* Notification */
+
+.notification {
+  font-size: 0.8rem;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.notification a {
+  color: #000;
+}
+
+.notification-success {
+  border-color: #1cbc2c;
+  background-color: #dff0d8;
+}
+
+.notification-error {
+  border-color: #bc211c;
+  background-color: #e4cbc7;
+}
+
+/* Other */
+
+.fundraise_form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 5%;
 }
 
-.App-link {
-  color: #61dafb;
+.fundraise_amount {
+  align-self: center;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #eaeaea;
+  width: 100%;
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.fundraise_pledgeButton {
+  align-self: center;
+  background-color: #1cbc2c;
+  color: #fff;
+  margin-top: 2%;
+  padding: 12px;
+  border: 0px;
+  border-radius: 5px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
 }

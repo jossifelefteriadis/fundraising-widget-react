@@ -73,7 +73,7 @@ export default class Widget extends React.Component {
 
   render() {
     return (
-      <div>
+      <section className='container'>
         <Header />
         <Tooltip state={this.state} />
         <BoxFrame
@@ -83,7 +83,7 @@ export default class Widget extends React.Component {
           wrongInput={this.wrongInput}
           closeSuccessMessage={this.closeSuccessMessage}
         />
-      </div>
+      </section>
     )
   }
 }
