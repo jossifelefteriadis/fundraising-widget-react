@@ -17,12 +17,13 @@ export default class BoxFrameContent extends React.Component {
           success-notifications, error-notification)
         </p>
         <p>
-          Only 3 days left to fund this project,
+          Only 3 days left to fund this project,{' '}
           <strong id='fundraise_currentFundingText'>
             ${this.props.state.amountFunded}
           </strong>{' '}
           has been raised towards the goal to raise{' '}
-          <strong id='fundraise_goalText'></strong>.
+          <strong id='fundraise_goalText'> ${this.props.state.fundGoal}</strong>
+          .
         </p>
         <p>
           Pledge money by entering the sum in the field below and press pledge,

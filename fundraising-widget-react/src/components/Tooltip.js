@@ -1,8 +1,9 @@
 import React from 'react'
 
-const Tooltip = () => (
+const Tooltip = props => (
   <section className='tooltip'>
-    <strong id='fundraise_remainingText'></strong> of the goal funded
+    <strong id='fundraise_remainingText'>{props.state.percentFunded}%</strong>{' '}
+    of the goal funded
   </section>
 )
 

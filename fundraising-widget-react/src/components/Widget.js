@@ -9,6 +9,7 @@ export default class Widget extends React.Component {
 
     this.state = {
       fundGoal: 1000,
+      percentFunded: 0,
       amountFunded: 0
     }
   }
@@ -24,7 +25,7 @@ export default class Widget extends React.Component {
     return (
       <div>
         <Header />
-        <Tooltip />
+        <Tooltip state={this.state} />
         <BoxFrame state={this.state} getAmount={this.getAmount} />
       </div>
     )

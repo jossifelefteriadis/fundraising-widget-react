@@ -6,7 +6,6 @@ const BoxFrame = props => (
   <section>
     <ProgressBar />
     <BoxFrameContent state={props.state} getAmount={props.getAmount} />
-    <p>{props.state.amountFunded}</p>
   </section>
 )
 
