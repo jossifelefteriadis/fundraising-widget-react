@@ -1,12 +1,14 @@
 import React from 'react'
+import ValidateAmount from '../utils/ValidateAmount'
 
 export default class BoxFrameContent extends React.Component {
   getAmount = e => {
     e.preventDefault()
     const value = e.target.elements.amount.value
-    this.props.getAmount(value)
-
-    e.target.elements.amount.value = ''
+    if (ValidateAmount(value)) {
+      e.target.elements.amount.value = ''
+      this.props.getAmount(value)
+    }
   }
 
   render() {
