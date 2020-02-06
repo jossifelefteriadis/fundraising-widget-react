@@ -2,10 +2,11 @@ import React from 'react'
 import ProgressBar from './ProgressBar'
 import BoxFrameContent from './BoxFrameContent'
 
-const BoxFrame = () => (
+const BoxFrame = props => (
   <section>
     <ProgressBar />
-    <BoxFrameContent />
+    <BoxFrameContent state={props.state} getAmount={props.getAmount} />
+    <p>{props.state.amountFunded}</p>
   </section>
 )
 
