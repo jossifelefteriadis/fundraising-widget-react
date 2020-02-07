@@ -1,4 +1,4 @@
-# fundraising-widget
+# Fundraising Widget
 A fundraising widget built in react
 
 ## Get Started
