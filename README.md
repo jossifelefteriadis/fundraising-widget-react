@@ -3,7 +3,7 @@ A fundraising widget built in react
 
 ## Get Started
 - Clone repo
-- Cd into directory
+- cd into directory
 - npm start
 
 ## Screenshots from the Fundraising Widget
